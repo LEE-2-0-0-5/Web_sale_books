@@ -1,0 +1,325 @@
+.chat-widget-container {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 10000;
+    /* Ensure on top */
+    font-family: 'Inter', sans-serif;
+}
+
+.chat-bubble {
+    background-color: #00C9FF;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s;
+}
+
+.chat-bubble:hover {
+    transform: scale(1.05);
+}
+
+.chat-icon {
+    font-size: 1.4rem;
+}
+
+.chat-label {
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+/* Window */
+.chat-window {
+    width: 380px;
+    /* Bigger width */
+    height: 550px;
+    /* Bigger height */
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    animation: slideUp 0.3s;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.chat-header {
+    background: #fff;
+    padding: 18px 20px;
+    border-bottom: 1px solid #eee;
+    font-weight: bold;
+    font-size: 1.2rem;
+    /* Bigger header */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.close-btn {
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #999;
+    padding: 5px;
+}
+
+.chat-body {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background: #f9f9f9;
+}
+
+.system-message {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.msg-bubble.system {
+    background: #e0e0e0;
+    color: #555;
+    font-size: 0.95rem;
+    /* Bigger system msg */
+    padding: 8px 15px;
+    border-radius: 6px;
+}
+
+.message-row {
+    display: flex;
+    margin-bottom: 12px;
+}
+
+.message-row.my-msg {
+    justify-content: flex-end;
+}
+
+.msg-bubble {
+    padding: 12px 18px;
+    /* Bigger padding */
+    border-radius: 18px;
+    max-width: 80%;
+    font-size: 1rem;
+    /* Bigger font */
+    line-height: 1.5;
+}
+
+.msg-bubble.me {
+    background: #dbdbdb;
+    color: #333;
+    border-bottom-right-radius: 4px;
+    /* Sligthly curved */
+}
+
+.msg-bubble.other {
+    background: white;
+    border: 1px solid #eee;
+    color: #333;
+    border-bottom-left-radius: 4px;
+}
+
+.chat-input-area {
+    padding: 15px 20px;
+    display: flex;
+    gap: 12px;
+    background: white;
+    border-top: 1px solid #eee;
+}
+
+.chat-input-area input {
+    flex: 1;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    padding: 10px 18px;
+    outline: none;
+    font-size: 1rem;
+    /* Bigger input font */
+}
+
+.chat-input-area button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    /* Bigger button */
+    color: #00C9FF;
+    display: flex;
+    align-items: center;
+}
+
+/* =========================================
+   NOEL THEME (Christmas) - Chat Widget
+   ========================================= */
+body.noel-theme .chat-bubble {
+    background: linear-gradient(to right, #00004c, #c62828);
+    /* Deep Blue & Red */
+    border: 2px solid #fff;
+    box-shadow: 0 4px 15px rgba(198, 40, 40, 0.4);
+}
+
+body.noel-theme .chat-window {
+    border: 2px solid #00004c;
+}
+
+body.noel-theme .chat-header {
+    background: #00004c;
+    color: white;
+    border-bottom: 2px solid #c62828;
+}
+
+body.noel-theme .close-btn {
+    color: white;
+}
+
+body.noel-theme .msg-bubble.me {
+    background: #c62828;
+    /* Red for my messages */
+    color: white;
+}
+
+body.noel-theme .chat-input-area button {
+    color: #c62828;
+}
+
+
+/* =========================================
+   TET THEME (Lunar New Year) - Chat Widget
+   ========================================= */
+body.tet-theme .chat-bubble {
+    background: linear-gradient(to right, #d32f2f, #FFD700);
+    /* Red & Gold */
+    border: 2px solid #FFD700;
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(211, 47, 47, 0.4);
+}
+
+body.tet-theme .chat-bubble .chat-label {
+    color: #fff;
+    text-shadow: 1px 1px 0 #d32f2f;
+}
+
+body.tet-theme .chat-window {
+    border: 2px solid #d32f2f;
+}
+
+body.tet-theme .chat-header {
+    background: #d32f2f;
+    /* Red header */
+    color: #FFD700;
+    /* Gold text */
+    border-bottom: 2px solid #FFD700;
+}
+
+body.tet-theme .close-btn {
+    color: #FFD700;
+}
+
+body.tet-theme .msg-bubble.me {
+    background: #FFD700;
+    /* Gold/Yellow for my messages */
+    color: #d32f2f;
+    /* Red text */
+}
+
+body.tet-theme .chat-input-area button {
+    color: #d32f2f;
+}
+
+/* --- THEMED BUBBLES --- */
+
+/* Noel Theme */
+.noel-bubble {
+    background: linear-gradient(135deg, #c0392b, #e74c3c);
+    border: 2px solid white;
+    box-shadow: 0 4px 15px rgba(192, 57, 43, 0.4);
+}
+
+.noel-bubble .chat-icon {
+    animation: bellRing 2s infinite;
+}
+
+/* Tet Theme */
+.tet-bubble {
+    background: linear-gradient(135deg, #e74c3c, #f1c40f);
+    border: 2px solid #f1c40f;
+    box-shadow: 0 4px 15px rgba(231, 76, 60, 0.4);
+}
+
+.tet-bubble .chat-icon {
+    animation: gentleWiggle 3s infinite;
+}
+
+/* Halloween Theme */
+.halloween-bubble {
+    background: linear-gradient(135deg, #8e44ad, #2c3e50);
+    border: 2px solid #e67e22;
+    box-shadow: 0 4px 15px rgba(142, 68, 173, 0.4);
+}
+
+.halloween-bubble .chat-icon {
+    animation: ghostFloat 3s ease-in-out infinite;
+    filter: drop-shadow(0 0 5px #e67e22);
+}
+
+/* Animations */
+@keyframes bellRing {
+
+    0%,
+    100% {
+        transform: rotate(0);
+    }
+
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+        transform: rotate(10deg);
+    }
+
+    20%,
+    40%,
+    60%,
+    80% {
+        transform: rotate(-10deg);
+    }
+}
+
+@keyframes gentleWiggle {
+
+    0%,
+    100% {
+        transform: rotate(-5deg);
+    }
+
+    50% {
+        transform: rotate(5deg);
+    }
+}
+
+@keyframes ghostFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+}

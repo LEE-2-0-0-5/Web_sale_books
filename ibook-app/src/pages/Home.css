@@ -1,0 +1,159 @@
+.home-page {
+    background-color: #f5f5f5;
+    padding-bottom: 40px;
+}
+
+.banner-section {
+    background-color: white;
+    padding: 20px 0;
+    margin-bottom: 30px;
+}
+
+.banner-wrapper {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+    height: 350px;
+}
+
+.main-banner {
+    background: linear-gradient(45deg, #00b8d4, #2980b9);
+    border-radius: 8px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 40px;
+    color: white;
+    overflow: hidden;
+}
+
+.banner-content h2 {
+    font-size: 48px;
+    margin: 0 0 10px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.banner-content p {
+    font-size: 24px;
+    margin: 0 0 30px;
+}
+
+.btn-banner {
+    padding: 12px 30px;
+    background-color: white;
+    color: #00b8d4;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
+    transition: transform 0.2s;
+}
+
+.btn-banner:hover {
+    transform: scale(1.05);
+}
+
+.sub-banners {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.sub-banner-item {
+    flex: 1;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.sub-banner-item:hover {
+    opacity: 0.9;
+}
+
+.promo-banner-middle {
+    margin: 30px auto;
+}
+
+@media (max-width: 768px) {
+    .banner-wrapper {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+
+    .main-banner {
+        height: 200px;
+    }
+
+    .sub-banners {
+        display: none;
+    }
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 20px;
+    padding: 10px 0;
+}
+
+@media (max-width: 768px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .container {
+        padding: 0 10px;
+    }
+
+    .promo-banner-middle {
+        display: none;
+    }
+}
+
+/* Category Navigation */
+.category-nav-container {
+    margin-top: 30px !important;
+    margin-bottom: 30px;
+}
+
+.category-scroll {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 5px;
+    width: 100%;
+}
+
+.category-pill {
+    flex: 1;
+    min-width: 120px;
+    text-align: center;
+    padding: 12px 15px;
+    background: white;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    font-weight: 600;
+    color: #444;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    font-size: 15px;
+}
+
+.category-pill:hover {
+    background: #3498db;
+    color: white;
+    border-color: #3498db;
+    box-shadow: 0 4px 10px rgba(52, 152, 219, 0.25);
+    transform: translateY(-2px);
+}

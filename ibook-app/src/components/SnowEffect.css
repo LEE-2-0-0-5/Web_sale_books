@@ -1,0 +1,322 @@
+.snowflake {
+    color: #fff;
+    font-size: 1em;
+    font-family: Arial, sans-serif;
+    text-shadow: 0 0 5px #000;
+    position: fixed;
+    top: -10%;
+    z-index: 9999;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: default;
+    -webkit-animation-name: snowflakes-fall, snowflakes-shake;
+    -webkit-animation-duration: 10s, 3s;
+    -webkit-animation-timing-function: linear, ease-in-out;
+    -webkit-animation-iteration-count: infinite, infinite;
+    -webkit-animation-play-state: running, running;
+    animation-name: snowflakes-fall, snowflakes-shake;
+    animation-duration: 10s, 3s;
+    animation-timing-function: linear, ease-in-out;
+    animation-iteration-count: infinite, infinite;
+    animation-play-state: running, running;
+}
+
+.snowflake:nth-of-type(0) {
+    left: 1%;
+    -webkit-animation-delay: 0s, 0s;
+    animation-delay: 0s, 0s;
+}
+
+.snowflake:nth-of-type(1) {
+    left: 10%;
+    -webkit-animation-delay: 1s, 1s;
+    animation-delay: 1s, 1s;
+}
+
+.snowflake:nth-of-type(2) {
+    left: 20%;
+    -webkit-animation-delay: 6s, .5s;
+    animation-delay: 6s, .5s;
+}
+
+.snowflake:nth-of-type(3) {
+    left: 30%;
+    -webkit-animation-delay: 4s, 2s;
+    animation-delay: 4s, 2s;
+}
+
+.snowflake:nth-of-type(4) {
+    left: 40%;
+    -webkit-animation-delay: 2s, 2s;
+    animation-delay: 2s, 2s;
+}
+
+.snowflake:nth-of-type(5) {
+    left: 50%;
+    -webkit-animation-delay: 8s, 3s;
+    animation-delay: 8s, 3s;
+}
+
+.snowflake:nth-of-type(6) {
+    left: 60%;
+    -webkit-animation-delay: 6s, 2s;
+    animation-delay: 6s, 2s;
+}
+
+.snowflake:nth-of-type(7) {
+    left: 70%;
+    -webkit-animation-delay: 2.5s, 1s;
+    animation-delay: 2.5s, 1s;
+}
+
+.snowflake:nth-of-type(8) {
+    left: 80%;
+    -webkit-animation-delay: 1s, 0s;
+    animation-delay: 1s, 0s;
+}
+
+.snowflake:nth-of-type(9) {
+    left: 90%;
+    -webkit-animation-delay: 3s, 1.5s;
+    animation-delay: 3s, 1.5s;
+}
+
+.snowflake:nth-of-type(10) {
+    left: 25%;
+    -webkit-animation-delay: 2s, 0s;
+    animation-delay: 2s, 0s;
+}
+
+.snowflake:nth-of-type(11) {
+    left: 65%;
+    -webkit-animation-delay: 4s, 2.5s;
+    animation-delay: 4s, 2.5s;
+}
+
+@-webkit-keyframes snowflakes-fall {
+    0% {
+        top: -10%;
+    }
+
+    100% {
+        top: 100%;
+    }
+}
+
+@-webkit-keyframes snowflakes-shake {
+
+    0%,
+    100% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+
+    50% {
+        -webkit-transform: translateX(80px);
+        transform: translateX(80px);
+    }
+}
+
+@keyframes snowflakes-fall {
+    0% {
+        top: -10%;
+    }
+
+    100% {
+        top: 100%;
+    }
+}
+
+@keyframes snowflakes-shake {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(80px);
+    }
+}
+
+/* =========================================
+   NOEL THEME STYLES (Christmas)
+   Activated when body has class .noel-theme
+   ========================================= */
+
+/* Header Background - User requested Deep Blue */
+body.noel-theme .header {
+    background: #00004c !important;
+    /* Deep Blue from image */
+    border-bottom: 2px solid #fff;
+    /* White snow border */
+}
+
+/* Footer Styling */
+body.noel-theme .footer {
+    background-color: #00004c !important;
+    color: white !important;
+    border-top: 2px solid #fff;
+}
+
+body.noel-theme .footer h3,
+body.noel-theme .footer p,
+body.noel-theme .footer a,
+body.noel-theme .footer-bottom,
+body.noel-theme .footer-bottom p {
+    color: white !important;
+}
+
+/* Auth Page Background */
+body.noel-theme .user-auth-page {
+    background-color: #f0f8ff;
+    /* AliceBlue (icy) */
+}
+
+/* Buttons - Make them POP! */
+/* Use a bright, festive Red with a white border and shadow */
+body.noel-theme .user-submit-btn,
+body.noel-theme .auth-blue-btn {
+    background-color: #FF0000 !important;
+    /* Bright Red */
+    background: linear-gradient(to bottom, #ff4d4d, #cc0000);
+    /* Red Gradient */
+    border: 2px solid #fff;
+    color: white !important;
+    font-weight: bold;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    /* Glow */
+}
+
+body.noel-theme .user-submit-btn:hover,
+body.noel-theme .auth-blue-btn:hover {
+    background: linear-gradient(to bottom, #ff6666, #ff0000) !important;
+    transform: scale(1.05);
+    /* Slight grow effect */
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+}
+
+/* Active Tab Underline */
+body.noel-theme .auth-tab.active {
+    border-bottom-color: #FF0000 !important;
+    color: #FF0000 !important;
+}
+
+/* Search Bar in Header - Ensure it stands out */
+body.noel-theme .search-bar {
+    border: 3px solid #FFD700 !important;
+    /* Gold border for search */
+    box-shadow: 0 0 5px #FFD700;
+}
+
+body.noel-theme .search-btn {
+    color: #cc0000;
+    /* Darker Red icon */
+}
+
+/* Accents for Balance/Cart in Header */
+body.noel-theme .header-right-actions,
+body.noel-theme .header-right-actions span,
+body.noel-theme .header-right-actions a,
+body.noel-theme .header-right-actions svg {
+    color: #fff !important;
+    /* White text/icons on dark blue header */
+}
+
+/* Dropdowns in Header (prevent white text on white bg) */
+body.noel-theme .dropdown-menu,
+body.noel-theme .cart-dropdown {
+    background-color: #fff;
+    color: #333;
+}
+
+body.noel-theme .dropdown-item {
+    color: #333 !important;
+}
+
+/* Links */
+body.noel-theme a:hover {
+    color: #ff4d4d;
+    /* Bright Red hover */
+}
+
+/* =========================================
+   SANTA ANIMATION
+   ========================================= */
+/* =========================================
+   NOEL HEADER DECORATIONS
+   ========================================= */
+
+/* Santa Animation - Scrolls with Header */
+.header-santa {
+    display: none;
+}
+
+body.noel-theme .header-santa {
+    display: block !important;
+    position: absolute;
+    /* Moves with header */
+    top: 5px;
+    left: 100%;
+    /* Start outside */
+    width: 150px;
+    height: auto;
+    z-index: 20;
+    /* Above header bg */
+    pointer-events: none;
+    animation: santa-fly-scroll 20s linear infinite;
+    filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.2));
+}
+
+@keyframes santa-fly-scroll {
+    0% {
+        left: 100%;
+        transform: translateY(0);
+    }
+
+    10% {
+        transform: translateY(5px);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+
+    100% {
+        left: -200px;
+        transform: translateY(0);
+    }
+}
+
+/* Static Decorations */
+.header-noel-left,
+.header-noel-right {
+    display: none;
+}
+
+body.noel-theme .header-noel-left {
+    display: block;
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    height: 80px;
+    /* Slightly taller for details */
+    width: auto;
+    z-index: 10;
+    pointer-events: none;
+    opacity: 0.95;
+}
+
+body.noel-theme .header-noel-right {
+    display: block;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    height: 60px;
+    width: auto;
+    z-index: 10;
+    pointer-events: none;
+    opacity: 0.9;
+}

@@ -1,0 +1,29 @@
+<svg width="150" height="100" viewBox="0 0 150 100" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(0, 10)">
+    <!-- Body (Multi-colored segments) -->
+    <path d="M50 40 Q70 20 90 40 T130 40" fill="none" stroke="#FFC107" stroke-width="25" stroke-linecap="round" />
+    <path d="M50 40 Q70 20 90 40 T130 40" fill="none" stroke="#D32F2F" stroke-width="15" stroke-linecap="round" stroke-dasharray="10,10" />
+    
+    <!-- Tail -->
+    <path d="M130 40 L145 30 L140 50 Z" fill="#D32F2F" />
+
+    <!-- Head -->
+    <g transform="translate(10, 15)">
+       <!-- Main Head Shape -->
+       <path d="M10 10 Q30 0 45 20 Q50 40 30 50 Q10 50 5 30 Z" fill="#D32F2F" />
+       <!-- Eye -->
+       <circle cx="20" cy="25" r="8" fill="white" stroke="black" stroke-width="2" />
+       <circle cx="20" cy="25" r="3" fill="black" />
+       <!-- Horn -->
+       <path d="M25 10 L35 -10 L40 10 Z" fill="#FFD700" stroke="black" stroke-width="1" />
+       <!-- Mouth/Beard -->
+       <path d="M10 40 Q25 55 40 40" fill="#fff" stroke="black" stroke-width="1" />
+       <!-- Red nose -->
+       <circle cx="10" cy="25" r="5" fill="#FF5252" />
+    </g> 
+    
+    <!-- Legs -->
+    <path d="M30 60 L30 80 M40 60 L40 80" stroke="#333" stroke-width="4" stroke-linecap="round" /> <!-- Front -->
+    <path d="M110 60 L110 80 M120 60 L120 80" stroke="#333" stroke-width="4" stroke-linecap="round" /> <!-- Back -->
+  </g>
+</svg>

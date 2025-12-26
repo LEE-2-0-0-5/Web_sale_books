@@ -1,0 +1,16 @@
+<svg width="100" height="80" viewBox="0 0 100 80" xmlns="http://www.w3.org/2000/svg">
+    <!-- Broom -->
+    <rect x="10" y="50" width="80" height="4" rx="2" fill="#8d6e63" transform="rotate(-10 50 50)" />
+    <path d="M10,65 Q5,55 10,45 L20,50 L20,60 Z" fill="#d7ccc8" transform="rotate(-10 15 55)" /> <!-- Broom tail -->
+    
+    <!-- Witch Body -->
+    <path d="M40,50 Q45,20 60,50 L55,65 Z" fill="#2c3e50" /> <!-- Robe -->
+    
+    <!-- Head & Hat -->
+    <circle cx="50" cy="35" r="8" fill="#f1c40f" /> <!-- Face (Green/Yellowish) -->
+    <path d="M40,30 L60,30 L50,5 Z" fill="#2c3e50" /> <!-- Hat Cone -->
+    <ellipse cx="50" cy="30" rx="15" ry="3" fill="#2c3e50" /> <!-- Hat Brim -->
+    
+    <!-- Cape/Hair flowing -->
+    <path d="M55,35 Q70,30 80,40" stroke="#2c3e50" stroke-width="3" fill="none" />
+</svg>

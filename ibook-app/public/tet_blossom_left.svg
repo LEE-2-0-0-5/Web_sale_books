@@ -1,0 +1,121 @@
+<svg width="250" height="200" viewBox="0 50 250 150" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="sketch">
+      <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="2" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="1.5"/>
+    </filter>
+  </defs>
+
+  <style>
+    /* Mồi lửa chạy từ dưới lên, đến đầu dây thì biến mất */
+    @keyframes spark-rise {
+      0% { cy: 180; opacity: 1; }
+      83% { cy: 80; opacity: 1; }   /* Đến đầu dây */
+      84% { cy: 80; opacity: 0; }   /* Biến mất */
+      85%, 100% { cy: 180; opacity: 0; } /* Teleport về cuối (ẩn) */
+    }
+    
+    /* Pháo: nổ khi lửa chạm, sau đó TẤT CẢ reset cùng lúc khi lửa đến đầu dây */
+    @keyframes explode-fall {
+      /* Bắt đầu: hiện bình thường */
+      0% { 
+        fill: #D32F2F; 
+        transform: translateY(0) scale(1); 
+        opacity: 1; 
+      }
+      /* Nổ */
+      1% { 
+        fill: #FFEB3B; 
+        transform: translateY(0) scale(1.4); 
+        opacity: 1; 
+      }
+      2% { 
+        fill: #FFF; 
+        transform: translateY(0) scale(1.6); 
+        opacity: 0.8; 
+      }
+      /* Rơi xuống */
+      3% { 
+        fill: #D32F2F; 
+        transform: translateY(20px) scale(0.8); 
+        opacity: 0.6; 
+      }
+      10% { 
+        transform: translateY(120px) scale(0.5) rotate(20deg); 
+        opacity: 0; 
+      }
+      /* ẨN cho đến khi lửa đến đầu dây */
+      10%, 82% {
+        transform: translateY(120px) scale(0); 
+        opacity: 0;
+      }
+      /* RESET TẤT CẢ cùng lúc khi lửa đến đầu dây (83%) */
+      83%, 100% { 
+        fill: #D32F2F;
+        transform: translateY(0) scale(1); 
+        opacity: 1; 
+      }
+    }
+    
+    .spark {
+      animation: spark-rise 12s infinite linear;
+    }
+    
+    .firecracker {
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: explode-fall 12s infinite ease-in;
+    }
+    
+    /* Delay: mỗi viên nổ khi mồi lửa chạm đến */
+    .f8 { animation-delay: 1s; }
+    .f7 { animation-delay: 2s; }
+    .f6 { animation-delay: 3s; }
+    .f5 { animation-delay: 4s; }
+    .f4 { animation-delay: 5s; }
+    .f3 { animation-delay: 6s; }
+    .f2 { animation-delay: 7s; }
+    .f1 { animation-delay: 8s; }
+  </style>
+
+  <g filter="url(#sketch)">
+    <!-- Cành đào -->
+    <path d="M10 160 Q70 120 130 90 Q180 70 230 55" 
+          fill="none" stroke="#5D4037" stroke-width="6" stroke-linecap="round"/>
+    <path d="M130 90 L145 55" fill="none" stroke="#5D4037" stroke-width="4"/>
+    <path d="M180 72 L200 45" fill="none" stroke="#5D4037" stroke-width="4"/>
+    
+    <!-- Hoa đào -->
+    <circle cx="145" cy="55" r="10" fill="#FFCDD2"/>
+    <circle cx="145" cy="55" r="4" fill="#E91E63"/>
+    <circle cx="200" cy="45" r="12" fill="#FFCDD2"/>
+    <circle cx="200" cy="45" r="5" fill="#E91E63"/>
+    <circle cx="105" cy="110" r="9" fill="#FFCDD2"/>
+    <circle cx="105" cy="110" r="3" fill="#E91E63"/>
+    <circle cx="165" cy="78" r="7" fill="#F48FB1"/>
+    <circle cx="220" cy="60" r="9" fill="#FFCDD2"/>
+    <circle cx="220" cy="60" r="3.5" fill="#E91E63"/>
+
+    <!-- Tràng pháo -->
+    <circle cx="150" cy="80" r="5" fill="#8D6E63"/>
+    <line x1="150" y1="80" x2="150" y2="180" stroke="#C62828" stroke-width="3"/>
+    
+    <!-- Các viên pháo (sẽ reset cùng lúc) -->
+    <rect x="138" y="92" width="24" height="6" rx="2" fill="#D32F2F" class="firecracker f1"/>
+    <rect x="138" y="102" width="24" height="6" rx="2" fill="#D32F2F" class="firecracker f2"/>
+    <rect x="138" y="112" width="24" height="6" rx="2" fill="#D32F2F" class="firecracker f3"/>
+    <rect x="138" y="122" width="24" height="6" rx="2" fill="#D32F2F" class="firecracker f4"/>
+    <rect x="138" y="132" width="24" height="6" rx="2" fill="#D32F2F" class="firecracker f5"/>
+    <rect x="138" y="142" width="24" height="6" rx="2" fill="#D32F2F" class="firecracker f6"/>
+    <rect x="138" y="152" width="24" height="6" rx="2" fill="#D32F2F" class="firecracker f7"/>
+    <rect x="138" y="162" width="24" height="6" rx="2" fill="#D32F2F" class="firecracker f8"/>
+    
+    <line x1="140" y1="105" x2="160" y2="105" stroke="#FFD700" stroke-width="1.5"/>
+    <line x1="140" y1="127" x2="160" y2="127" stroke="#FFD700" stroke-width="1.5"/>
+    <line x1="140" y1="149" x2="160" y2="149" stroke="#FFD700" stroke-width="1.5"/>
+    
+    <!-- Mồi lửa -->
+    <circle cx="150" cy="180" r="4" fill="#FF6F00" class="spark"/>
+    <circle cx="150" cy="180" r="2.5" fill="#FFEB3B" class="spark"/>
+  </g>
+</svg>

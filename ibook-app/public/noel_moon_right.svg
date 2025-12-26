@@ -1,0 +1,21 @@
+<svg width="150" height="100" viewBox="0 0 150 100" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="moon-sketch">
+      <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="3" result="noise" />
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="2" />
+    </filter>
+  </defs>
+
+  <g filter="url(#moon-sketch)">
+    <!-- Moon -->
+    <path d="M80 20 A 30 30 0 1 1 80 80 A 20 20 0 1 0 80 20 Z" fill="#FFD700" stroke="#FFC107" stroke-width="1" />
+    
+    <!-- Cloud 1 -->
+    <path d="M40 70 Q50 60 65 65 Q80 55 95 65 Q110 60 115 75 Q120 90 95 90 L60 90 Q35 90 40 70 Z" fill="#fff" opacity="0.8" />
+
+    <!-- Stars -->
+    <path d="M20 30 L22 35 L27 37 L22 39 L20 44 L18 39 L13 37 L18 35 Z" fill="#fff" />
+    <path d="M120 40 L121 43 L124 44 L121 45 L120 48 L119 45 L116 44 L119 43 Z" fill="#fff" />
+    <path d="M100 15 L102 18 L105 19 L102 20 L100 23 L98 20 L95 19 L98 18 Z" fill="#fff" />
+  </g>
+</svg>

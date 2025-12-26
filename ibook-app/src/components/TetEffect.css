@@ -1,0 +1,245 @@
+.tet-flower {
+    position: fixed;
+    top: -10%;
+    z-index: 9999;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: default;
+    -webkit-animation-name: tet-fall, tet-shake;
+    -webkit-animation-duration: 10s, 3s;
+    -webkit-animation-timing-function: linear, ease-in-out;
+    -webkit-animation-iteration-count: infinite, infinite;
+    -webkit-animation-play-state: running, running;
+    animation-name: tet-fall, tet-shake;
+    animation-duration: 10s, 3s;
+    animation-timing-function: linear, ease-in-out;
+    animation-iteration-count: infinite, infinite;
+    animation-play-state: running, running;
+    font-size: 1.5em;
+    /* Slightly larger for flowers */
+}
+
+/* Color variations handled in JS or specific classes if needed, 
+   but emojis have their own colors */
+
+.tet-flower:nth-of-type(0) {
+    left: 1%;
+    animation-delay: 0s, 0s;
+}
+
+.tet-flower:nth-of-type(1) {
+    left: 10%;
+    animation-delay: 1s, 1s;
+}
+
+.tet-flower:nth-of-type(2) {
+    left: 20%;
+    animation-delay: 6s, .5s;
+}
+
+.tet-flower:nth-of-type(3) {
+    left: 30%;
+    animation-delay: 4s, 2s;
+}
+
+.tet-flower:nth-of-type(4) {
+    left: 40%;
+    animation-delay: 2s, 2s;
+}
+
+.tet-flower:nth-of-type(5) {
+    left: 50%;
+    animation-delay: 8s, 3s;
+}
+
+.tet-flower:nth-of-type(6) {
+    left: 60%;
+    animation-delay: 6s, 2s;
+}
+
+.tet-flower:nth-of-type(7) {
+    left: 70%;
+    animation-delay: 2.5s, 1s;
+}
+
+.tet-flower:nth-of-type(8) {
+    left: 80%;
+    animation-delay: 1s, 0s;
+}
+
+.tet-flower:nth-of-type(9) {
+    left: 90%;
+    animation-delay: 3s, 1.5s;
+}
+
+.tet-flower:nth-of-type(10) {
+    left: 25%;
+    animation-delay: 2s, 0s;
+}
+
+.tet-flower:nth-of-type(11) {
+    left: 65%;
+    animation-delay: 4s, 2.5s;
+}
+
+.tet-flower:nth-of-type(12) {
+    left: 15%;
+    animation-delay: 5s, 1s;
+}
+
+.tet-flower:nth-of-type(13) {
+    left: 85%;
+    animation-delay: 7s, 2s;
+}
+
+@-webkit-keyframes tet-fall {
+    0% {
+        top: -10%;
+    }
+
+    100% {
+        top: 100%;
+    }
+}
+
+@-webkit-keyframes tet-shake {
+
+    0%,
+    100% {
+        -webkit-transform: translateX(0) rotate(0deg);
+        transform: translateX(0) rotate(0deg);
+    }
+
+    50% {
+        -webkit-transform: translateX(80px) rotate(180deg);
+        transform: translateX(80px) rotate(180deg);
+    }
+}
+
+@keyframes tet-fall {
+    0% {
+        top: -10%;
+    }
+
+    100% {
+        top: 100%;
+    }
+}
+
+@keyframes tet-shake {
+
+    0%,
+    100% {
+        transform: translateX(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateX(80px) rotate(180deg);
+    }
+}
+
+/* =========================================
+   TET THEME STYLES
+   Activated when body has class .tet-theme
+   ========================================= */
+
+/* Header Background - Red/Gold Gradient or solid Red */
+body.tet-theme .header {
+    background: linear-gradient(to right, #d32f2f, #b71c1c) !important;
+    border-bottom: 2px solid #FFD700;
+    /* Gold border */
+}
+
+/* Auth Page Background */
+body.tet-theme .user-auth-page {
+    background-color: #fff8e1;
+    /* Very light yellow/cream */
+}
+
+/* Buttons */
+body.tet-theme .user-submit-btn,
+body.tet-theme .auth-blue-btn {
+    background-color: #d32f2f !important;
+    /* Tet Red */
+    border: 1px solid #b71c1c;
+}
+
+body.tet-theme .user-submit-btn:hover,
+body.tet-theme .auth-blue-btn:hover {
+    background-color: #b71c1c !important;
+}
+
+/* Active Tab Underline */
+body.tet-theme .auth-tab.active {
+    border-bottom-color: #d32f2f !important;
+    color: #d32f2f !important;
+}
+
+/* Search Bar in Header */
+body.tet-theme .search-bar {
+    border: 2px solid #FFD700;
+}
+
+body.tet-theme .search-btn {
+    color: #d32f2f;
+}
+
+/* Links */
+body.tet-theme a:hover {
+    color: #d32f2f;
+}
+
+/* =========================================
+   TET DECORATIONS (Lion, Blossoms, Lanterns)
+   ========================================= */
+
+/* Corner Decorations */
+/* Header Decorations */
+.header-decor-tet-left,
+.header-decor-tet-right {
+    display: none;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    /* Above header bg, below content? */
+    pointer-events: none;
+}
+
+/* Ensure header is positioning context */
+body.tet-theme .header {
+    position: relative;
+    overflow: visible;
+    /* Allow decorations to hang out */
+}
+
+body.tet-theme .header-decor-tet-left {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: auto;
+    z-index: 10;
+    pointer-events: none;
+}
+
+body.tet-theme .header-decor-tet-right {
+    display: block;
+    right: 0;
+    width: 200px;
+    height: auto;
+    transform-origin: top right;
+    animation: gentle-sway 5s ease-in-out infinite alternate;
+}
+
+@keyframes gentle-sway {
+    from {
+        transform: rotate(-1deg);
+    }
+
+    to {
+        transform: rotate(1deg);
+    }
+}

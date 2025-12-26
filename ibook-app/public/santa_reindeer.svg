@@ -1,0 +1,70 @@
+<svg width="400" height="150" viewBox="0 0 400 150" xmlns="http://www.w3.org/2000/svg">
+  <!-- Hand-drawn filter -->
+  <defs>
+    <filter id="sketchy">
+      <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="3" result="noise" />
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="2" />
+    </filter>
+  </defs>
+
+  <g filter="url(#sketchy)" transform="translate(10,20)">
+    
+    <!-- GUIDE ROPES -->
+    <path d="M120 70 L250 80" stroke="#8D6E63" stroke-width="2" />
+    <path d="M120 70 L180 80" stroke="#8D6E63" stroke-width="2" />
+
+    <!-- REINDEER 1 (Front) -->
+    <g transform="translate(10, 50)">
+      <!-- Body -->
+      <ellipse cx="30" cy="30" rx="25" ry="15" fill="#8D6E63" />
+      <!-- Legs -->
+      <path d="M15 40 L10 60" stroke="#8D6E63" stroke-width="3" />
+      <path d="M25 40 L25 60" stroke="#8D6E63" stroke-width="3" />
+      <path d="M35 40 L40 60" stroke="#8D6E63" stroke-width="3" />
+      <path d="M45 40 L55 60" stroke="#8D6E63" stroke-width="3" />
+      <!-- Head -->
+      <circle cx="10" cy="20" r="10" fill="#8D6E63" />
+      <!-- Eye -->
+      <circle cx="8" cy="18" r="1.5" fill="black" />
+      <!-- Nose (Red Nosed Reindeer?) -->
+      <circle cx="2" cy="20" r="3" fill="red" />
+      <!-- Antlers -->
+      <path d="M10 10 L5 -5 M10 10 L15 -5" stroke="#5D4037" stroke-width="2" />
+    </g>
+
+    <!-- REINDEER 2 -->
+    <g transform="translate(80, 55)">
+      <ellipse cx="30" cy="30" rx="25" ry="15" fill="#8D6E63" />
+      <path d="M15 40 L10 60" stroke="#8D6E63" stroke-width="3" />
+      <path d="M25 40 L25 60" stroke="#8D6E63" stroke-width="3" />
+      <path d="M35 40 L40 60" stroke="#8D6E63" stroke-width="3" />
+      <path d="M45 40 L55 60" stroke="#8D6E63" stroke-width="3" />
+      <circle cx="10" cy="20" r="10" fill="#8D6E63" />
+      <circle cx="8" cy="18" r="1.5" fill="black" />
+      <path d="M10 10 L5 -5 M10 10 L15 -5" stroke="#5D4037" stroke-width="2" />
+    </g>
+
+    <!-- SLEIGH AND SANTA -->
+    <g transform="translate(250, 40)">
+      <!-- Sleigh Body (Red) -->
+      <path d="M10 50 Q10 80 50 80 L110 80 L120 50 Z" fill="#C62828" stroke="#000" stroke-width="2" />
+      <!-- Sleigh Runners (Gold) -->
+      <path d="M0 85 L120 85 Q130 85 130 75" fill="none" stroke="#FFD700" stroke-width="4" />
+      <path d="M30 80 L30 85 M90 80 L90 85" stroke="#FFD700" stroke-width="3" />
+
+      <!-- Santa Body -->
+      <path d="M50 50 L50 20 L90 20 L90 50 Z" fill="#D32F2F" />
+      <!-- Santa Head -->
+      <circle cx="70" cy="15" r="12" fill="#FFCCBC" />
+      <!-- Beard -->
+      <path d="M60 18 Q70 35 80 18" fill="white" stroke="#eee" />
+      <!-- Hat -->
+      <path d="M58 10 L70 -5 L82 10 Z" fill="#D32F2F" />
+      <circle cx="70" cy="-5" r="4" fill="white" />
+      
+      <!-- Bag of Toys (Green) -->
+      <path d="M90 60 Q120 40 100 80" fill="#4CAF50" stroke="#000" stroke-width="1" />
+    </g>
+
+  </g>
+</svg>

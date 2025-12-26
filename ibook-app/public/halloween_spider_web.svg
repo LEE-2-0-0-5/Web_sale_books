@@ -1,0 +1,102 @@
+<svg width="250" height="120" viewBox="0 0 250 120" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="webCenter" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+      <stop offset="0%" style="stop-color:#bdc3c7;stop-opacity:0.6" />
+      <stop offset="100%" style="stop-color:#bdc3c7;stop-opacity:0.1" />
+    </radialGradient>
+  </defs>
+
+  <style>
+    /* Animations */
+    .spider-drop { animation: dropDown 4s ease-in-out infinite alternate; }
+    .spider-wiggle { animation: wiggle 0.2s linear infinite; }
+    .web-sway { animation: sway 5s ease-in-out infinite alternate; transform-origin: top right; }
+    .prey-struggle { animation: struggle 1.5s ease-in-out infinite alternate; transform-origin: center; }
+    .leg-move { animation: legCrawl 1s linear infinite alternate; }
+
+    @keyframes dropDown {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(40px); }
+    }
+    @keyframes wiggle {
+      0% { transform: rotate(-2deg); }
+      50% { transform: rotate(2deg); }
+      100% { transform: rotate(-2deg); }
+    }
+    @keyframes sway {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(1deg); }
+    }
+    @keyframes struggle {
+      0% { transform: rotate(-5deg) scale(0.9); }
+      100% { transform: rotate(5deg) scale(1.1); }
+    }
+    @keyframes legCrawl {
+      from { stroke-dashoffset: 0; }
+      to { stroke-dashoffset: 2; }
+    }
+  </style>
+
+  <!-- Group containing the whole web system for slight sway effect -->
+  <g class="web-sway">
+      
+    <!-- BACKGROUND WEB LAYERS (More complex) -->
+    <!-- Large Corner Web -->
+    <path d="M250,0 L100,0 M250,0 L120,40 M250,0 L160,80 M250,0 L220,100" stroke="rgba(255,255,255,0.3)" stroke-width="1.5" />
+    <!-- Cross threads -->
+    <path d="M120,10 Q140,20 160,20 Q180,10 200,5" stroke="rgba(255,255,255,0.2)" fill="none" />
+    <path d="M130,30 Q150,45 180,40 Q210,30 230,20" stroke="rgba(255,255,255,0.2)" fill="none" />
+    <path d="M150,60 Q180,70 200,60 Q230,50 240,40" stroke="rgba(255,255,255,0.2)" fill="none" />
+    
+    <!-- Secondary Web (Top Center) -->
+    <path d="M150,0 L130,50 M150,0 L170,40" stroke="rgba(255,255,255,0.15)" stroke-width="1" />
+    <path d="M135,20 Q150,30 165,20" stroke="rgba(255,255,255,0.15)" fill="none" />
+
+    <!-- PREY (Caught Fly/Butterfly) -->
+    <g transform="translate(160, 40)" class="prey-struggle">
+        <!-- Cocooned body -->
+        <ellipse cx="0" cy="0" rx="4" ry="8" fill="#ecf0f1" />
+        <!-- Wrappings -->
+        <path d="M-4,-4 L4,-2 M-4,0 L4,2 M-4,4 L4,6" stroke="#95a5a6" stroke-width="0.5" />
+        <!-- Wing sticking out -->
+        <path d="M2,-2 Q10,-10 6,0" fill="#3498db" opacity="0.7" />
+    </g>
+
+    <!-- SPIDER 1 (Big Drop Spider) -->
+    <g transform="translate(200, 10)">
+        <!-- The Silk Thread -->
+        <line x1="0" y1="0" x2="0" y2="40" stroke="rgba(255,255,255,0.6)" stroke-width="1" class="spider-drop" style="animation-direction:alternate; animation-duration: 4s; stroke-dasharray: 120; stroke-dashoffset: 0;"/>
+        
+        <!-- The Spider Body (Animated Group) -->
+        <g class="spider-drop">
+            <g class="spider-wiggle">
+                <!-- Thread connection -->
+                <line x1="0" y1="-100" x2="0" y2="0" stroke="rgba(255,255,255,0.6)" stroke-width="1" />
+
+                <!-- Legs (8) -->
+                <path d="M0,5 Q-10,0 -8,10 M0,5 Q-10,5 -10,15 M0,5 Q-8,10 -6,18 M0,5 Q-4,12 -2,20" stroke="#2c3e50" stroke-width="1.5" fill="none" />
+                <path d="M0,5 Q10,0 8,10 M0,5 Q10,5 10,15 M0,5 Q8,10 6,18 M0,5 Q4,12 2,20" stroke="#2c3e50" stroke-width="1.5" fill="none" />
+                
+                <!-- Abdomen -->
+                <ellipse cx="0" cy="8" rx="6" ry="8" fill="#2c3e50" />
+                <!-- Cephalothorax -->
+                <circle cx="0" cy="2" r="4" fill="#2c3e50" />
+                <!-- Eyes -->
+                <circle cx="-1.5" cy="3" r="1" fill="#e74c3c" />
+                <circle cx="1.5" cy="3" r="1" fill="#e74c3c" />
+                <!-- Back Marking (Black Widow hourglass style) -->
+                <path d="M-2,6 L2,6 L0,9 Z M-2,12 L2,12 L0,9 Z" fill="#c0392b" />
+            </g>
+        </g>
+    </g>
+
+    <!-- SPIDER 2 (Tiny Crawler - Slower & More Visible) -->
+    <g transform="translate(150, 30) rotate(45)">
+         <circle cx="0" cy="0" r="4" fill="#000" /> <!-- Bigger body -->
+         <path d="M-4,-4 L-7,-7 M4,-4 L7,-7 M-4,4 L-7,7 M4,4 L7,7" stroke="#000" stroke-width="0.8" class="leg-move" />
+         <!-- Slower movement (20s) and wider path -->
+         <animateMotion path="M0,0 L-30,20 L0,0" dur="20s" repeatCount="indefinite" />
+    </g>
+    
+  </g>
+</svg>

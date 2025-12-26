@@ -1,0 +1,184 @@
+/* HalloweenEffect.css */
+
+/* Main Container: Covers the viewport, sits on top, click-through */
+.halloween-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 2000;
+    /* Higher than header (usually 1000) */
+    overflow: hidden;
+}
+
+/* --- THEME OVERRIDES --- */
+body.halloween-theme .header {
+    background-color: #2c0e3a !important;
+    /* Deep Purple Background for Header */
+    border-bottom: 2px solid #e67e22;
+    /* Orange border */
+}
+
+body.halloween-theme .header a,
+body.halloween-theme .header .logo,
+body.halloween-theme .header .user-name {
+    color: #ffd700 !important;
+    /* Gold text */
+}
+
+/* Search bar adjustment for purple theme */
+body.halloween-theme .search-bar input {
+    border: 2px solid #8e44ad;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+body.halloween-theme .search-btn {
+    background-color: #e67e22 !important;
+    /* Orange button */
+}
+
+/* Footer Override */
+body.halloween-theme .footer {
+    background-color: #1a0b2e !important;
+    /* Very Dark Purple */
+    border-top: 3px solid #e67e22;
+}
+
+body.halloween-theme .footer-col h3 {
+    color: #e67e22 !important;
+}
+
+/* --- HEADER DECORATIONS --- */
+
+.halloween-header-left {
+    position: absolute;
+    top: 0;
+    /* Align to top of screen/header */
+    left: 0;
+    z-index: 2001;
+    height: 80px;
+    /* Approximate header height */
+    display: flex;
+    align-items: flex-end;
+    /* Sit at bottom of header */
+}
+
+.halloween-header-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2001;
+    height: 80px;
+}
+
+.haunted-scene {
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5));
+}
+
+.spider-scene {
+    filter: drop-shadow(-2px 2px 2px rgba(0, 0, 0, 0.5));
+}
+
+/* --- FLYING WITCH ANIMATION --- */
+
+.witch-fly-container {
+    position: absolute;
+    top: 10px;
+    /* Fly within the header area */
+    right: -150px;
+    /* Start off-screen RIGHT */
+    left: auto;
+    /* Reset left */
+    z-index: 2002;
+    animation: witchFlyAcross 15s linear infinite;
+    filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.3));
+}
+
+/* Flip the witch so she faces Left */
+.witch-svg {
+    transform: scaleX(-1);
+}
+
+@keyframes witchFlyAcross {
+    0% {
+        right: -150px;
+        transform: translateY(0) rotate(0deg);
+    }
+
+    25% {
+        transform: translateY(5px) rotate(2deg);
+    }
+
+    50% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    75% {
+        transform: translateY(-5px) rotate(-2deg);
+    }
+
+    100% {
+        right: 100%;
+        /* Fly off-screen LEFT */
+        transform: translateY(0) rotate(0deg);
+    }
+}
+
+/* --- FALLING BACKGROUND ITEMS --- */
+/* Subtle background falling items, fewer than before */
+.halloween-background-item {
+    position: absolute;
+    top: -50px;
+    font-size: 1.5rem;
+    opacity: 0.6;
+    animation: halloweenFall linear infinite;
+}
+
+.item-1 {
+    left: 10%;
+    animation-duration: 10s;
+    animation-delay: 0s;
+}
+
+.item-2 {
+    left: 30%;
+    animation-duration: 12s;
+    animation-delay: -3s;
+}
+
+.item-3 {
+    left: 50%;
+    animation-duration: 8s;
+    animation-delay: -5s;
+}
+
+.item-4 {
+    left: 70%;
+    animation-duration: 15s;
+    animation-delay: -1s;
+}
+
+.item-5 {
+    left: 90%;
+    animation-duration: 11s;
+    animation-delay: -7s;
+    font-size: 1.2rem;
+}
+
+@keyframes halloweenFall {
+    0% {
+        transform: translateY(-50px) rotate(0deg);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
